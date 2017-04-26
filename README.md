@@ -5,7 +5,7 @@ This is an example set of Terraform modules attempting to reproduce [Terraform#1
 Planning:
 
 ```
-$ tf plan -out create.tfplan
+$ terraform plan -out create.tfplan
 Refreshing Terraform state in-memory prior to plan...
 The refreshed state will be used to calculate this plan, but will not be
 persisted to local or remote state storage.
@@ -60,7 +60,7 @@ Plan: 2 to add, 0 to change, 0 to destroy.
 Saving the plan to graph:
 
 ```
-$ tf graph create.tfplan | dot -Tpng create.png
+$ terraform graph create.tfplan | dot -Tpng create.png
 ```
 
 The `create.png` file:
@@ -70,7 +70,7 @@ The `create.png` file:
 Applying plan:
 
 ```
-$ tf apply create.tfplan
+$ terraform apply create.tfplan
 module.lc.aws_launch_configuration.aws_launch_configuration: Creating...
   associate_public_ip_address: "" => "false"
   ebs_block_device.#:          "" => "<computed>"
@@ -113,7 +113,7 @@ Apply complete! Resources: 2 added, 0 changed, 0 destroyed.
 Capturing the destroy plan:
 
 ```
-$ tf plan -destroy -out=dest.tfplan
+$ terraform plan -destroy -out=dest.tfplan
 Refreshing Terraform state in-memory prior to plan...
 The refreshed state will be used to calculate this plan, but will not be
 persisted to local or remote state storage.
@@ -143,7 +143,7 @@ Plan: 0 to add, 0 to change, 2 to destroy.
 Graphing the destroy plan:
 
 ```
-$ tf graph dest.tfplan| dot -Tpng > destroy.png
+$ terraform graph dest.tfplan | dot -Tpng > destroy.png
 ```
 
 The `destroy.png` file:
@@ -154,7 +154,7 @@ The `destroy.png` file:
 Successfully destroying:
 
 ```
-$ tf apply dest.tfplan
+$ terraform apply dest.tfplan
 module.autoscaling_group.aws_autoscaling_group.aws_autoscaling_group: Destroying... (ID: some_lc)
 module.autoscaling_group.aws_autoscaling_group.aws_autoscaling_group: Still destroying... (ID: some_lc, 10s elapsed)
 module.autoscaling_group.aws_autoscaling_group.aws_autoscaling_group: Still destroying... (ID: some_lc, 20s elapsed)

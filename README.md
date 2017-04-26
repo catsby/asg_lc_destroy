@@ -63,6 +63,10 @@ Saving the plan to graph:
 $ tf graph create.tfplan | dot -Tpng create.png
 ```
 
+The `create.png` file:
+
+![create](create.png)
+
 Applying plan:
 
 ```
@@ -141,6 +145,11 @@ Graphing the destroy plan:
 ```
 $ tf graph dest.tfplan| dot -Tpng > destroy.png
 ```
+
+The `destroy.png` file:
+
+![destroy](destroy.png)
+
 
 Successfully destroying:
 

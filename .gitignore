@@ -1,5 +1,4 @@
 *.tfplan
 .terraform
-*.png
 *.tfstate
 *.tfstate.backup
